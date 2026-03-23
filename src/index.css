@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --color-primary: #f7bd48;
+  --color-on-primary: #412d00;
+  --color-background: #061423;
+  --color-surface: #061423;
+  --color-surface-container-low: #0f1c2c;
+  --color-surface-container: #132030;
+  --color-surface-container-high: #1e2b3b;
+  --color-surface-container-highest: #283646;
+  --color-on-surface: #d6e4f9;
+  --color-on-surface-variant: #c4c6cc;
+  --color-outline: #8e9196;
+  --color-outline-variant: #44474c;
+  --color-primary-container: #251800;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(45deg, #f7bd48, #f6be3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes pulse-gold-effect {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(247, 189, 72, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(247, 189, 72, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(247, 189, 72, 0); }
+}
+
+.pulse-gold {
+  animation: pulse-gold-effect 2s infinite;
+}
